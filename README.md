@@ -1,6 +1,6 @@
 # BookingAutomation-Bot
 
-Booking Automation Bot 🏨🤖
+Booking Automation Bot 
 
 A Python-based automation bot using Selenium that searches and filters hotels on Booking.com. Built as a learning project to practice OOP, Selenium automation, and dynamic interaction with websites.
 
@@ -57,14 +57,6 @@ The bot performs all actions automatically, then exits and closes the browser (i
 
 The filtration class (BookingFiltration) handles star ratings and price sorting using Selenium.
 
-📦 Requirements
-
-Create a requirements.txt file:
-
-selenium
-
-
-Optional: include your ChromeDriver version if needed.
 
 📝 Future Improvements
 
