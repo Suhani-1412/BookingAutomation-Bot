@@ -42,11 +42,11 @@ class Booking(webdriver.Chrome):
         
         target_Currenc=WebDriverWait(self,10).until(
             EC.element_to_be_clickable(
-                (By.XPATH, f"//div[contains(@class,'CurrencyPicker_currency') and normalize-space(text())='{currency}']")   #normalize-space removes leading/trailing spaces.
+                (By.XPATH, f"//div[contains(@class,'CurrencyPicker_currency') and normalize-space(text())='{currency}']")   
             )
         )
         target_Currenc.find_element(By.XPATH, "..").click()
-        # explaination in ans.txt
+       
         
     def place_to_go(self,place):
         place_to_goo=WebDriverWait(self,10).until(
@@ -57,7 +57,7 @@ class Booking(webdriver.Chrome):
         place_to_goo.clear()
         place_to_goo.send_keys(place)
         
-        # kya place daalni h
+       
         target_place = WebDriverWait(self, 10).until(
             EC.element_to_be_clickable(
         (       By.XPATH, f"//li[@role='option']//div[contains(normalize-space(.), '{place}')]")
@@ -123,7 +123,7 @@ class Booking(webdriver.Chrome):
         filtration.applystar(3)
         filtration.price()
         
-        # ye exit function chl jaega apne aap jb run.py me (now look in run.py) 
+        
     def __exit__(self,exc_type,exc_val,exc_tab):
         if self.teardown:
              self.quit()
@@ -131,27 +131,3 @@ class Booking(webdriver.Chrome):
        
 
 
-
-# for dates if u want to selct a date fro eg 3 months from now
-# from datetime import datetime,timedelta
-# def dates(self,months,stay):
-#     today=datetime.today()
-#     checkin=today+timedelta(days=30*months)
-#     checkout=timedelta(days=stay)
-    
-#     # format to data-date
-#     checkin_str=checkin.strftime("%Y-%m-%d")
-#     checkout_str=checkout.strftime("%Y-%m-%d")
-    
-#     check_in_date=WebDriverWait(self,10).until(
-#         EC.element_to_be_clickable(
-#             (By.CSS_SELECTOR,f'span[data-date="{checkin_str}"]')
-#         )
-#     )
-#     check_in_date.click()
-#     check_out_date=WebDriverWait(self,10).until(
-#         EC.element_to_be_clickable(
-#             (By.CSS_SELECTOR,f'span[data-date="{checkout_str}"]')
-#         )
-#     )
-#     check_out_date.click()    
